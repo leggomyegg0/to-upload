@@ -1,0 +1,218 @@
+The AM_AWS_ACCESS_KEY_ID variable is not set. Defaulting to a blank string.
+The AM_AWS_DEFAULT_REGION variable is not set. Defaulting to a blank string.
+The AM_AWS_SECRET_ACCESS_KEY variable is not set. Defaulting to a blank string.
+The AM_FORCE_TEST_FAIL variable is not set. Defaulting to a blank string.
+The AM_TELEGRAM_TOKEN variable is not set. Defaulting to a blank string.
+The CK_AWS_ACCESS_KEY_ID variable is not set. Defaulting to a blank string.
+The CK_AWS_DEFAULT_REGION variable is not set. Defaulting to a blank string.
+The CK_AWS_SECRET_ACCESS_KEY variable is not set. Defaulting to a blank string.
+The CK_TELEGRAM_TOKEN variable is not set. Defaulting to a blank string.
+Creating compose_linter_run ... 
+Creating compose_linter_run ... done
+##> devops/docker_run/entrypoint.sh
+UID=0
+GID=0
+# Activate environment
+##> /app/devops/docker_run/setenv.sh
+# Set PATH
+PATH=/app:/app/linters:/app/dev_scripts_devto/notebooks:/app/documentation_devto/scripts:/app/amp/documentation/scripts:/app/amp/dev_scripts/testing:/app/amp/dev_scripts/notebooks:/app/amp/dev_scripts/install:/app/amp/dev_scripts/infra:/app/amp/dev_scripts/git:/app/amp/dev_scripts/aws:/app/amp/dev_scripts:/app/amp:.:/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Set PYTHONPATH
+PYTHONPATH=/app:/app/amp:
+# Configure env
+git --version: git version 2.25.1
+/src
+[33mWARNING[0m: AWS credential check failed: can't find /home/.aws/credentials file.
+[33mWARNING[0m: AWS credential check failed: can't find /home/.aws/config file.
+# Check AWS authentication setup
+      Name                    Value             Type    Location
+      ----                    -----             ----    --------
+   profile                       am           manual    --profile
+
+The config profile (am) could not be found
+AM_CONTAINER_VERSION='1.2.0'
+which python: /venv/bin/python
+python -V: Python 3.8.10
+pandas: 1.4.3
+helpers: <module 'helpers' from '/src/helpers/__init__.py'>
+PATH=/app:/app/linters:/app/dev_scripts_devto/notebooks:/app/documentation_devto/scripts:/app/amp/documentation/scripts:/app/amp/dev_scripts/testing:/app/amp/dev_scripts/notebooks:/app/amp/dev_scripts/install:/app/amp/dev_scripts/infra:/app/amp/dev_scripts/git:/app/amp/dev_scripts/aws:/app/amp/dev_scripts:/app/amp:.:/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+PYTHONPATH=/app:/app/amp:
+entrypoint.sh: 'pre-commit run -c /app/.pre-commit-config.yaml --files defi/tulip/implementation/uni_swap.py'
+One and only one set-up config should be true:
+is_cmamp_prod=False
+is_dev4=False
+is_dev_ck=False
+is_ig_prod=False
+is_inside_ci=False
+is_mac=False
+[0m[36mINFO[0m: > cmd='/venv/bin/invoke print_env'
+report_memory_usage=False report_cpu_usage=False
+10:04:47 - [41mWARN [0m henv.py get_repo_config_file:485                       Using value '/app/repo_config.py' for AM_REPO_CONFIG_PATH from env var
+10:04:47 - [41mWARN [0m <string> _raise_invalid_host:148                       Don't recognize host: host_os_name=Linux, am_host_os_name=Linux
+10:04:47 - [41mWARN [0m <string> _raise_invalid_host:148                       Don't recognize host: host_os_name=Linux, am_host_os_name=Linux
+10:04:47 - [41mWARN [0m <string> _raise_invalid_host:148                       Don't recognize host: host_os_name=Linux, am_host_os_name=Linux
+[31m-----------------------------------------------------------------------------
+This code is not in sync with the container:
+code_version='1.4.1' != container_version='1.2.0'
+-----------------------------------------------------------------------------
+You need to:
+- merge origin/master into your branch with `invoke git_merge_master`
+- pull the latest container with `invoke docker_pull`[0m
+# Repo config:
+  enable_privileged_mode='False'
+  get_docker_base_image_name='dev_tools'
+  get_docker_shared_group=''
+  get_docker_user=''
+  get_host_name='github.com'
+  get_invalid_words='[]'
+  get_name='//dev_tools'
+  get_repo_map='{'cm': 'cryptokaizen/cmamp'}'
+  get_shared_data_dirs='None'
+  has_dind_support='False'
+  has_docker_sudo='False'
+  is_AM_S3_available='True'
+  is_CK_S3_available='True'
+  is_dev4='False'
+  is_dev_ck='False'
+  is_inside_ci='False'
+  is_inside_docker='True'
+  is_mac='False'
+  run_docker_as_root='False'
+  skip_submodules_test='True'
+  use_docker_network_mode_host='False'
+  use_docker_sibling_containers='False'
+# System signature:
+  # Git
+    branch_name='Issue111_Add_unit_tests_for_UniswapV1'
+    hash='42600d436'
+    # Last commits:
+      * 42600d436 root     Made changes and ran tests                                        (    6 days ago) Tue Jun 13 23:25:06 2023  (HEAD -> Issue111_Add_unit_tests_for_UniswapV1, origin/Issue111_Add_unit_tests_for_UniswapV1)
+      *   686677b20 root     Merge branch 'Issue111_Add_unit_tests_for_UniswapV1' of https://github.com/sorrentum/sorrentum into Issue111_Add_unit_tests_for_UniswapV1 (   5 weeks ago) Mon May 15 01:10:11 2023           
+      |\  
+      * | 8c1d02337 nfarb    Added changes and fixed test                                      (   5 weeks ago) Mon May 15 01:10:02 2023           
+  # Machine info
+    system=Linux
+    node name=695d65c1ff8d
+    release=5.19.0-43-generic
+    version=#44~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon May 22 13:39:36 UTC 2
+    machine=x86_64
+    processor=x86_64
+    cpu count=4
+    cpu freq=scpufreq(current=3302.4, min=0.0, max=0.0)
+    memory=svmem(total=20635942912, available=19223658496, percent=6.8, used=1068208128, free=17717227520, active=756801536, inactive=1831534592, buffers=94740480, cached=1755766784, shared=32178176, slab=207773696)
+    disk usage=sdiskusage(total=53334773760, used=38386921472, free=12205408256, percent=75.9)
+  # Packages
+    python: 3.8.10
+    cvxopt: ?
+    cvxpy: ?
+    gluonnlp: ?
+    gluonts: ?
+    joblib: 0.16.0
+    mxnet: ?
+    numpy: 1.23.0
+    pandas: 1.4.3
+    pyarrow: ?
+    scipy: 1.6.1
+    seaborn: ?
+    sklearn: ?
+    statsmodels: 0.13.2
+# Env vars:
+  AM_AWS_ACCESS_KEY_ID=undef
+  AM_AWS_DEFAULT_REGION=undef
+  AM_AWS_PROFILE='am'
+  AM_AWS_S3_BUCKET='alphamatic-data'
+  AM_AWS_SECRET_ACCESS_KEY=undef
+  AM_ECR_BASE_PATH='665840871993.dkr.ecr.us-east-1.amazonaws.com'
+  AM_ENABLE_DIND='0'
+  AM_FORCE_TEST_FAIL=''
+  AM_HOST_NAME='Ubuntu'
+  AM_HOST_OS_NAME='Linux'
+  AM_HOST_USER_NAME='root'
+  AM_HOST_VERSION='5.19.0-43-generic'
+  AM_REPO_CONFIG_CHECK='True'
+  AM_REPO_CONFIG_PATH='/app/repo_config.py'
+  AM_TELEGRAM_TOKEN=empty
+  CI=''
+  CK_AWS_ACCESS_KEY_ID=empty
+  CK_AWS_DEFAULT_REGION=''
+  CK_AWS_S3_BUCKET='cryptokaizen-data'
+  CK_AWS_SECRET_ACCESS_KEY=empty
+  CK_ECR_BASE_PATH='sorrentum'
+  GH_ACTION_ACCESS_TOKEN=empty
+
+Check for merge conflicts................................................Passed
+Trim Trailing Whitespace.................................................Passed
+Fix End of Files.........................................................Passed
+Check for added large files..............................................Passed
+CRLF end-lines remover...................................................Passed
+Tabs remover.............................................................Passed
+autoflake................................................................Passed
+add_python_init_files....................................................Passed
+amp_lint_md..........................................(no files to check)Skipped
+amp_doc_formatter........................................................Failed
+- hook id: amp_doc_formatter
+- exit code: 1
+- files were modified by this hook
+
+One and only one set-up config should be true:
+is_cmamp_prod=False
+is_dev4=False
+is_dev_ck=False
+is_ig_prod=False
+is_inside_ci=False
+is_mac=False
+[0m[36mINFO[0m: > cmd='/app/linters/amp_doc_formatter.py defi/tulip/implementation/uni_swap.py'
+report_memory_usage=False report_cpu_usage=False
+defi/tulip/implementation/uni_swap.py:21: in public method `__init__`:D401: First line should be in imperative mood; try rephrasing (found 'Constructor')
+
+amp_isort................................................................Failed
+- hook id: amp_isort
+- files were modified by this hook
+
+One and only one set-up config should be true:
+is_cmamp_prod=False
+is_dev4=False
+is_dev_ck=False
+is_ig_prod=False
+is_inside_ci=False
+is_mac=False
+[0m[36mINFO[0m: > cmd='/app/linters/amp_isort.py defi/tulip/implementation/uni_swap.py'
+report_memory_usage=False report_cpu_usage=False
+
+amp_class_method_order...................................................Passed
+amp_normalize_import.....................................................Failed
+- hook id: amp_normalize_import
+- files were modified by this hook
+
+One and only one set-up config should be true:
+is_cmamp_prod=False
+is_dev4=False
+is_dev_ck=False
+is_ig_prod=False
+is_inside_ci=False
+is_mac=False
+[0m[36mINFO[0m: > cmd='/app/linters/amp_normalize_import.py defi/tulip/implementation/uni_swap.py'
+report_memory_usage=False report_cpu_usage=False
+10:04:55 - [41mWARN [0m amp_normalize_import.py _remove_import_from_docstring_text:855 The docstring must end with the import line: all comments after the import line will be removed.
+
+amp_format_separating_line...............................................Passed
+amp_black................................................................Failed
+- hook id: amp_black
+- files were modified by this hook
+
+One and only one set-up config should be true:
+is_cmamp_prod=False
+is_dev4=False
+is_dev_ck=False
+is_ig_prod=False
+is_inside_ci=False
+is_mac=False
+[0m[36mINFO[0m: > cmd='/app/linters/amp_black.py defi/tulip/implementation/uni_swap.py'
+report_memory_usage=False report_cpu_usage=False
+
+amp_processjupytext......................................................Passed
+amp_check_filename.......................................................Passed
+amp_warn_incorrectly_formatted_todo......................................Passed
+amp_flake8...............................................................Passed
+amp_pylint...............................................................Passed
+amp_mypy.................................................................Passed
+1
