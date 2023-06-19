@@ -1,0 +1,100 @@
+[0m[36mINFO[0m: > cmd='/root/src/venv/amp.client_venv/bin/invoke lint --files defi/tulip/implementation/order.py'
+report_memory_usage=False report_cpu_usage=False
+[95m## lint: [0m
+[1;37mrm linter_output.txt[0m
+17:28:30 - [36mINFO [0m lib_tasks_lint.py lint:378                             Files to lint:
+defi/tulip/implementation/order.py
+[1;37m(IMAGE=sorrentum/dev_tools:prod \
+        docker-compose \
+        --file /home/nfarb/Documents/sorrentum/devops/compose/docker-compose.yml \
+        --env-file devops/env/default.env \
+        run \
+        --rm \
+        --name root.cmamp.linter.sorrentum.20230525_172830 \
+        --user $(id -u):$(id -g) \
+        linter \
+        pre-commit run -c /app/.pre-commit-config.yaml --files defi/tulip/implementation/order.py ) 2>&1 | tee -a linter_output.txt[0m
+The AM_AWS_ACCESS_KEY_ID variable is not set. Defaulting to a blank string.
+The AM_AWS_DEFAULT_REGION variable is not set. Defaulting to a blank string.
+The AM_AWS_SECRET_ACCESS_KEY variable is not set. Defaulting to a blank string.
+The AM_FORCE_TEST_FAIL variable is not set. Defaulting to a blank string.
+The AM_TELEGRAM_TOKEN variable is not set. Defaulting to a blank string.
+The CK_AWS_ACCESS_KEY_ID variable is not set. Defaulting to a blank string.
+The CK_AWS_DEFAULT_REGION variable is not set. Defaulting to a blank string.
+The CK_AWS_SECRET_ACCESS_KEY variable is not set. Defaulting to a blank string.
+The CK_TELEGRAM_TOKEN variable is not set. Defaulting to a blank string.
+Creating compose_linter_run ... 
+Creating compose_linter_run ... done
+##> devops/docker_run/entrypoint.sh
+UID=0
+GID=0
+# Activate environment
+##> /app/devops/docker_run/setenv.sh
+# Set PATH
+PATH=/app:/app/linters:/app/dev_scripts_devto/notebooks:/app/documentation_devto/scripts:/app/amp/documentation/scripts:/app/amp/dev_scripts/testing:/app/amp/dev_scripts/notebooks:/app/amp/dev_scripts/install:/app/amp/dev_scripts/infra:/app/amp/dev_scripts/git:/app/amp/dev_scripts/aws:/app/amp/dev_scripts:/app/amp:.:/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Set PYTHONPATH
+PYTHONPATH=/app:/app/amp:
+# Configure env
+git --version: git version 2.25.1
+/src
+[33mWARNING[0m: AWS credential check failed: can't find /home/.aws/credentials file.
+[33mWARNING[0m: AWS credential check failed: can't find /home/.aws/config file.
+# Check AWS authentication setup
+
+The config profile (am) could not be found
+      Name                    Value             Type    Location
+      ----                    -----             ----    --------
+   profile                       am           manual    --profile
+AM_CONTAINER_VERSION='1.2.0'
+which python: /venv/bin/python
+python -V: Python 3.8.10
+pandas: 1.4.4
+helpers: <module 'helpers' from '/src/helpers/__init__.py'>
+PATH=/app:/app/linters:/app/dev_scripts_devto/notebooks:/app/documentation_devto/scripts:/app/amp/documentation/scripts:/app/amp/dev_scripts/testing:/app/amp/dev_scripts/notebooks:/app/amp/dev_scripts/install:/app/amp/dev_scripts/infra:/app/amp/dev_scripts/git:/app/amp/dev_scripts/aws:/app/amp/dev_scripts:/app/amp:.:/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+PYTHONPATH=/app:/app/amp:
+entrypoint.sh: 'pre-commit run -c /app/.pre-commit-config.yaml --files defi/tulip/implementation/order.py'
+Traceback (most recent call last):
+  File "/venv/bin/invoke", line 8, in <module>
+    sys.exit(program.run())
+  File "/venv/lib/python3.8/site-packages/invoke/program.py", line 373, in run
+    self.parse_collection()
+  File "/venv/lib/python3.8/site-packages/invoke/program.py", line 465, in parse_collection
+    self.load_collection()
+  File "/venv/lib/python3.8/site-packages/invoke/program.py", line 696, in load_collection
+    module, parent = loader.load(coll_name)
+  File "/venv/lib/python3.8/site-packages/invoke/loader.py", line 76, in load
+    module = imp.load_module(name, fd, path, desc)
+  File "/usr/lib/python3.8/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/usr/lib/python3.8/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 702, in _load
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/src/tasks.py", line 10, in <module>
+    from helpers.lib_tasks import (  # This is not an invoke target.
+  File "/app/amp/helpers/lib_tasks.py", line 14, in <module>
+    from helpers.lib_tasks_docker import *  # isort:skip  # noqa: F401,F403 # pylint: disable=unused-import,unused-wildcard-import,wildcard-import
+  File "/app/amp/helpers/lib_tasks_docker.py", line 21, in <module>
+    import helpers.henv as henv
+  File "/app/amp/helpers/henv.py", line 16, in <module>
+    import helpers.hversion as hversio
+  File "/app/amp/helpers/hversion.py", line 23, in <module>
+    import helpers.hserver as hserver
+  File "/app/amp/helpers/hserver.py", line 212, in <module>
+    _dassert_setup_consistency()
+  File "/app/amp/helpers/hserver.py", line 203, in _dassert_setup_consistency
+    raise ValueError(msg)
+ValueError: One and only one set-up config should be true:
+is_cmamp_prod=False
+is_dev4=False
+is_dev_ck=False
+is_ig_prod=False
+is_inside_ci=False
+is_mac=False
+1
+17:28:37 - [36mINFO [0m lib_tasks_lint.py lint:408                             Parsing 'linter_output.txt'
+17:28:37 - [36mINFO [0m lib_tasks_lint.py lint:413                             Saved cfile in './linter_warnings.txt'
+
+

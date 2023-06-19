@@ -1,0 +1,70 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.6, pytest-7.3.1, pluggy-1.0.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/nfarb/Documents/sorrentum
+configfile: pytest.ini
+collecting ... No module named 'psutil'
+# Git
+  branch_name='Issue111_Add_unit_tests_for_UniswapV1'
+  hash='686677b20'
+  # Last commits:
+    *   686677b20 root     Merge branch 'Issue111_Add_unit_tests_for_UniswapV1' of https://github.com/sorrentum/sorrentum into Issue111_Add_unit_tests_for_UniswapV1 (   4 weeks ago) Sun May 14 21:10:11 2023  (HEAD -> Issue111_Add_unit_tests_for_UniswapV1, origin/Issue111_Add_unit_tests_for_UniswapV1)
+    |\  
+    * | 8c1d02337 nfarb    Added changes and fixed test                                      (   4 weeks ago) Sun May 14 21:10:02 2023           
+    * | d15300f0d nfarb    Altered tests according to feedback and made the suggested changes (   5 weeks ago) Wed May 10 01:24:23 2023           
+# Machine info
+# Packages
+  system=Linux
+  node name=Ubuntu
+  release=5.19.0-41-generic
+  version=#42~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Tue Apr 18 17:40:00 UTC 2
+  machine=x86_64
+  processor=x86_64
+  python: 3.10.6
+  cvxopt: ?
+  cvxpy: ?
+  gluonnlp: ?
+  gluonts: ?
+  joblib: ?
+  mxnet: ?
+  numpy: 1.24.3
+  pandas: 2.0.0
+  pyarrow: ?
+  scipy: ?
+  seaborn: ?
+  sklearn: ?
+  statsmodels: ?
+[0m[36mINFO[0m: > cmd='/home/nfarb/.local/bin/pytest -x -s defi/tulip/test/test_uniswap.py'
+report_memory_usage=False report_cpu_usage=False
+[36mINFO[0m: Saving log to file 'tmp.pytest.log'
+collected 0 items / 1 error
+
+==================================== ERRORS ====================================
+_______________ ERROR collecting defi/tulip/test/test_uniswap.py _______________
+ImportError while importing test module '/home/nfarb/Documents/sorrentum/defi/tulip/test/test_uniswap.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+../../.local/lib/python3.10/site-packages/_pytest/python.py:617: in _importtestmodule
+    mod = import_path(self.path, mode=importmode, root=self.config.rootpath)
+../../.local/lib/python3.10/site-packages/_pytest/pathlib.py:564: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.10/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1050: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1027: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1006: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:688: in _load_unlocked
+    ???
+../../.local/lib/python3.10/site-packages/_pytest/assertion/rewrite.py:172: in exec_module
+    exec(co, module.__dict__)
+defi/tulip/test/test_uniswap.py:1: in <module>
+    import defi.tulip.implementation.uni_swap as dtuimunsw
+E   ModuleNotFoundError: No module named 'defi'
+=========================== short test summary info ============================
+ERROR defi/tulip/test/test_uniswap.py
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+=============================== 1 error in 0.32s ===============================
