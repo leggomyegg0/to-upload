@@ -1,0 +1,4 @@
+dev_scripts/gdrive_share.py:19:[amp_mypy] error: Cannot find implementation or library stub for module named 'google.oauth2'  [import]
+dev_scripts/gdrive_share.py:20:[amp_mypy] error: Cannot find implementation or library stub for module named 'googleapiclient'  [import]
+dev_scripts/gdrive_share.py:20:[amp_mypy] error: Cannot find implementation or library stub for module named 'googleapiclient.discovery'  [import]
+dev_scripts/gdrive_share.py:67:[amp_pylint] [W0612(unused-variable), _share_drive] Unused variable 'index'
